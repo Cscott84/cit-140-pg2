@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF=8">
+	<title> CIT 140 Program II</title>
+	<link href="https://fonts.googleapis.com/css?family=Notable&display=swap" rel="stylesheet">
+	
+	<style>
+	body
+	{	
+		
+		width:60%;
+		margin: 10% auto 0 20px;
+		font-family: 'Fresca', sans-serif;
+	}
+	
+	h2,h3
+	{
+	color:#000099;
+
+	}
+	
+	#tax
+	{
+	 color: #ff0000;
+	 font-size: 2.5em;
+	 width:80%;
+	 margin: 10% 20% 0 50%;
+	 font-weight:bold;	
+	 
+	 
+
+	}
+	
+	.text
+	{
+		color:#000099;
+		font-weight:bold;
+	}
+	
+	.btn
+	{
+		background-color:#ff0000;;
+		color:white;
+		
+	}
+	
+	</style>
+	
+	<script>
+		function tax()
+		{
+			var gross = parseInt(document.frm1.txt1.value);
+			
+			if(gross > 0 && gross <= 27050)
+			{
+				var tax1 = gross * .15;
+				document.frm1.txt2.value = "$ " + tax1.toFixed(2);
+				
+				document.getElementById("tax").innerHTML = "You owe    $ " + tax1.toFixed(2) + " to Uncle Sam"; 
+				document.body.style.backgroundImage = "url('https://dontmesswithtaxes.typepad.com/.a/6a00d8345157c669e2022ad3e2c8d9200b-800wi')";
+				document.body.style.backgroundPosition = "center";
+				document.body.style.backgroundRepeat = "no-repeat";
+			}
+			
+			else if (gross > 27050 && gross <= 65550)
+			{
+				var tax2 = 4057.50 + ( .275 * (gross - 27050));
+				document.frm1.txt2.value = "$ " + tax2.toFixed(2);
+				
+				document.getElementById("tax").innerHTML ="You owe    $ " + tax2.toFixed(2) + " to Uncle Sam";
+				document.body.style.backgroundImage = "url('https://dontmesswithtaxes.typepad.com/.a/6a00d8345157c669e2022ad3e2c8d9200b-800wi')";
+				document.body.style.backgroundPosition ="center";
+				document.body.style.backgroundRepeat="no-repeat";
+			}
+			
+			else if (gross > 65550 && gross <= 136750)
+			{
+				var tax3 = 14654.00 + (.305 * (gross - 65550));
+				document.frm1.txt2.value = "$ " + tax3.toFixed(2);
+					
+				document.getElementById("tax").innerHTML = "You owe    $ " + tax3.toFixed(2) + " to Unlcle Sam";
+				document.body.style.backgroundImage="url('https://dontmesswithtaxes.typepad.com/.a/6a00d8345157c669e2022ad3e2c8d9200b-800wi')";
+				document.body.style.backgroundPosition ="center";
+				document.body.style.backgroundRepeat="no-repeat";
+			}
+			
+			else if (gross > 136750 && gross <= 297350)
+			{
+				tax4 = 36361.00 + (.355 * (gross - 136750));
+				document.frm1.txt2.value = "$ " + tax4.toFixed(2);
+				
+				document.getElementById("tax").innerHTML = "You owe   $ " + tax4.toFixed(2) + " to Uncle Sam";
+				document.body.style.backgroundImage = "url('https://dontmesswithtaxes.typepad.com/.a/6a00d8345157c669e2022ad3e2c8d9200b-800wi')";
+				document.body.style.backgroundPosition = "center";
+				document.body.style.backgroundRepeat ="no-repeat";
+				
+			}
+			
+			else
+			{
+				tax5 = 93374.00 + (.391 * (gross - 297350));
+				document.frm1.txt2.value = "$ " + tax5.toFixed(2);
+				
+				document.getElementById("tax").innerHTML = "You owe   $" + tax5.toFixed(2) + " to Uncle Sam";
+				document.body.style.backgroundImage = "url('https://dontmesswithtaxes.typepad.com/.a/6a00d8345157c669e2022ad3e2c8d9200b-800wi')";
+				document.body.style.backgroundPosition = "center";
+				document.body.style.backgroundRepeat = "no-repeat";
+				
+			}
+			
+		}
+	
+	
+	
+	
+	
+	
+	
+	</script>
+	
+	
+</head>
+
+<body>	
+	<h2>Corey Scott - CIT 140 Program II</h2>
+	<h3>Tax Calculator: </h3>
+	<form name="frm1">
+	<input type="text" name="txt1" /> <span class="text">Please Enter your gross income</span>
+	<br><br>
+	<input class="btn" type="button"  value="Calculate tax" onclick="tax();"/>
+	<input class="btn" type="reset" id="btnC" value="clear"/>
+	<br><br>
+	<input type="text" name="txt2"/> <span class="text">Taxes for Uncle Sam</span>
+	</form>
+	<br>
+	<br>
+	<br>
+	
+	<div id="tax">
+	</div>
+	
+</body>
+</html>
+
